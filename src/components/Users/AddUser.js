@@ -25,6 +25,7 @@ const AddUser = (props) => {
     const addUserHandler = (event) =>{
         event.preventDefault();
         if(userInput.username.length !== 0 && userInput.userage.length !== 0 && userInput.userage > 0 ){
+            props.onAddUser(userInput.username,userInput.userage);
         }
         setUserInput({
             username : "",
