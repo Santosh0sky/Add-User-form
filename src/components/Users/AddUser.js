@@ -3,7 +3,7 @@ import Card from '../UI/Card';
 import "./AddUser.css";
 import Button from "../UI/Button";
 
-const AddUser = () => {
+const AddUser = (props) => {
     const [userInput, setUserInput] = useState({
         username : "",
         userage : "",
@@ -24,8 +24,7 @@ const AddUser = () => {
 
     const addUserHandler = (event) =>{
         event.preventDefault();
-        if(userInput.username.length != 0 && userInput.userage.length != 0 && userInput.userage > 0 ){
-            console.log(userInput.username, userInput.userage);
+        if(userInput.username.length !== 0 && userInput.userage.length !== 0 && userInput.userage > 0 ){
         }
         setUserInput({
             username : "",
