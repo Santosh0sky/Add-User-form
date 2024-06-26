@@ -1,6 +1,7 @@
-import React,{useState} from "react";
+import React,{useState, Fragment} from "react";
 import AddUser from "./components/Users/AddUser";
 import UsersList from "./components/Users/UsersList";
+
 
 function App() {
   const [usersList, setUsersList] = useState([]);
@@ -12,13 +13,14 @@ const addUserHandler = (uName, uAge) =>{
 }
 
   return (
-    <div>
+    <Fragment>{/* wecan use <React.Fragment> diractly or <></> to empty tag*/}
     <div>
       <AddUser onAddUser = {addUserHandler}/>
     </div>
     <div>
       <UsersList users={usersList}/>
-    </div></div>
+    </div>
+    </Fragment>
   );
 }
 

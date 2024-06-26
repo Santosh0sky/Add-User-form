@@ -26,7 +26,7 @@ const AddUser = (props) => {
 
     const addUserHandler = (event) =>{
         event.preventDefault();
-        if(userInput.username.length == 0 && userInput.userage.length == 0){
+        if(userInput.username.length === 0 && userInput.userage.length === 0){
             setError({title: "invalid Input",message: "Please enter a valid username and age (non-empty values)."});
             return;
         }
@@ -47,7 +47,7 @@ const AddUser = (props) => {
 
 
     return(
-        <div>
+        <React.Fragment>
             {error && <ErrorModal title={error.title} message ={error.message} onConfirm = {errorHandler}/>}
             <Card className="input">
                 <form onSubmit={addUserHandler}>
@@ -58,7 +58,7 @@ const AddUser = (props) => {
                     <Button type="submit">Add User</Button>
                 </form>
             </Card>
-        </div>
+        </React.Fragment>
   );
 };
 
